@@ -46,7 +46,8 @@ public class JoinServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String gender = request.getParameter("gender");
-		String address= request.getParameter("address");
+		String address= request.getParameter("addr");
+		String job= request.getParameter("job");
 		//String hobby=request.getParameter("hobby");
 		String[] hobbies=request.getParameterValues("hobby");
 		
@@ -57,20 +58,42 @@ public class JoinServlet extends HttpServlet {
 		/*
 		 * 3.클라이언트에 결과전송
 		 */
-		out.println("<table cellspacing = '0' width = '350px' border = '1'");
 		out.println("<tr>");
-		out.println("<td>아이디 :\"+ id + \"</td>");
-//		out.println("<ul>");
-//		out.println("<li><tr>아이디 :"+ id + "</li>");
-//		out.println("<li>이름 :"+ name + "</li>");
-//		out.println("<li>성별 :"+ gender + "</li>");
-//		out.println("<li>주소 :"+ address + "</li>");
-//		out.println("</ul>");
-//		out.println("<li>성별:"+gender+"</li>");
-//		for (int i = 0; i < hobbies.length; i++) {
-//			out.println("<li>취미:"+hobbies[i]+"</li>");
-//		}
-//		out.println("</ul>");
+		out.println("<td style='text-align:center' colspan='2'>"+name+"님 가입정보</td>");
+		out.println("</tr>");
+		out.println("<table border='1' align='center'>");
+		out.println("<tr>");
+		out.println("<td>" + "아이디" + "</td>");
+		out.println("<td>" + id + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td>" + "이름" + "</td>");
+		out.println("<td>" + name + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td>" + "성별" + "</td>");
+		out.println("<td>" + gender + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td>" + "주소" + "</td>");
+		out.println("<td>" + address + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td>" + "직업" + "</td>");
+		out.println("<td>" + job + "</td>");
+		out.println("</tr>");
+		
+		out.println("<tr>");
+		if (hobbies == null) {
+			out.println("<td>취미</td>");
+			out.print("<td>없음</td>");
+			out.println("</tr>");
+		}
+		out.println("<td rowspan="+hobbies.length+">취미</td>");
+		for (int i = 0; i < hobbies.length; i++) {
+			out.println("<td>취미:"+hobbies[i]+"</td>");
+			out.println("</tr>");
+		}
 	}
 
 }
