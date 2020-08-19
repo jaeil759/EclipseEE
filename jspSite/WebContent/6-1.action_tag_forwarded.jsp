@@ -1,5 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	/*
+	6-1.action_forward.jsp 로부터 전달받은 데이터 뽑기
+	*/
+	String msg=(String)request.getAttribute("msg");
+	String id=(String)request.getAttribute("id");
+	String pass=(String)request.getAttribute("pass");
+
+
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,5 +23,9 @@
 	당한 jsp입니다..
 	제가 응답합니다.
 </p>
+<p>6-1.action_forwarded.jsp로 부터 전달받은 데이터 </p>
+msg:<%= msg%><br>
+id:<%= id%><br>
+pass:<%= pass%><br>
 </body>
 </html>

@@ -1,17 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%
+/*
+요청URL-->
+  http://192.16.15.31/guest_model1/guest_view.jsp?guest_no=2
+	1 . 파라메타받기
+	2 . Service객체 메쏘드호출(업무처리)
+	3 . 요청클라이언트로 응답 
+*/
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>방명록 관리</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-
-
-
 
 <link rel="stylesheet"
 	href="css/styles.css">
@@ -32,23 +35,14 @@
 		<!-- header start -->
 		<div id="header">
 		<!-- include_common_top.jsp start-->
-			<h1>
-				<a href="">WEB SAMPLE SITE</a>
-			</h1>
-			<!-- include_common_top.jsp end-->
+		<jsp:include page="include_common_top.jsp"/>	
+		<!-- include_common_top.jsp end-->
 		</div>
 		<!-- header end -->
 		<!-- navigation start-->
 		<div id="navigation">
 			<!-- include_common_left.jsp start-->
-			<p>
-				<strong>메 뉴</strong>
-			</p>
-			<ul>
-				<li><a href="guest_list.jsp">방명록</a></li>
-				<li><a href="member_list.html">회원관리</a></li>
-				<li><a href="board_list.html">게시판</a></li>
-			</ul>
+			<jsp:include page="include_common_left.jsp"/>
 			<!-- include_common_left.jsp end-->
 		</div>
 		<!-- navigation end-->
