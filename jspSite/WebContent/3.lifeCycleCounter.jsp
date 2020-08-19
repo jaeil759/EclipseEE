@@ -1,6 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%!
 	private int count=0;
+	public void jspInit(){
+		System.out.println("1.jspInit():객체생성시 단한번호출되는메쏘드[객체초기화,리소스획득]");
+}
+	public void jspDestroy(){
+		System.out.println("3.jspDestroy():객체가 메모리에서해지시호출[리소스반환]");
+}
+
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
