@@ -20,9 +20,25 @@ public class GuestDaoImpl implements GuestDao{
 	}
 
 	@Override
-	public Guest selectByNo(int no) {
-		// TODO Auto-generated method stub
-		return null;
+	public Guest selectByNo(int no) throws Exception {
+		Guest guest=null;
+		Connection con = 
+				ConnectionFactory.getConnection();
+		PreparedStatement pstmt=
+				con.prepareStatement(GuestSQL.GUEST_SELECT_NO);
+		pstmt.setInt(1, no);
+		ResultSet rs=pstmt.executeQuery();
+		if(rs.next()) {
+					guest=new Guest(rs.getInt("guest_no"),
+							rs.getString("guest_name"),
+							rs.getString("guest_date"),
+							rs.getString("guest_email"),
+							rs.getString("guest_homepage"),
+							rs.getString("guest_title"),
+							rs.getString("guest_content"));
+			
+		}
+		return guest ;
 	}
 	/*
 이름             널?       유형             
