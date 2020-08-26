@@ -10,9 +10,9 @@
 <h1>[주소록쓰기폼]</h1><hr>
 <hr>
 	<div>
-		<a href='address_list.do'>주소록리스트</a>
+		<a href='address_list.jsp'>주소록리스트</a>
 	</div>
-	<form method="post" action="address_insert_action.do">
+	<form method="post" action="address_insert_action.jsp">
 		아이디--<input type="text" name="id"><br> 
 		이름----<input type="text" name="name"><br> 
 		전화번호<input type="text" name="phone"><br> 

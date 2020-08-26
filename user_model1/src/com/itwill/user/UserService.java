@@ -1,5 +1,7 @@
 ﻿package com.itwill.user;
 
+import java.util.ArrayList;
+
 import com.itwill.user.exception.ExistedUserException;
 import com.itwill.user.exception.PasswordMismatchException;
 import com.itwill.user.exception.UserNotFoundException;
@@ -30,7 +32,9 @@ public class UserService {
 	/*
 	 * 회원리스트
 	 */
-	
+	public ArrayList<User> findUserList() throws Exception{
+		return userDao.findUserList();
+	}
 	/*
 	 * 아이디중복체크
 	 * 
@@ -54,15 +58,25 @@ public class UserService {
 	/*
 	 * 회원1명보기
 	 */
-	
+	public User findUser(String userId) throws Exception,UserNotFoundException{
+		User findUser = userDao.findUser(userId);
+		if(findUser==null) {
+			throw new UserNotFoundException("존재하지않는 회원입니다.");
+		}
+		return findUser;
+	}
 	/*
 	 * 회원탈퇴
 	 */
-	
+	public int remove(String userId)throws Exception{
+		return userDao.remove(userId);
+	}
 	/*
 	 * 회원수정
 	 */
-	
+	public int update(User user) throws Exception {
+		return  userDao.update(user);
+	}
 	
 }
 

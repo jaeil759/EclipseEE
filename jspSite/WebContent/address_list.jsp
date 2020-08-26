@@ -1,7 +1,7 @@
 <%@page import="com.itwill.address.Address"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.itwill.address.AddressSevice"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	AddressSevice addressSevice=new AddressSevice();
@@ -21,7 +21,7 @@
 <div>
 	<ul>
 		<%for(Address address:addressList){ %>
-			<li><a href='address_detail.jsp?no=1'>1 KIM</a></li>
+			<li><a href='address_detail.jsp?no=<%=address.getNo()%>'><%=address.getNo() %>,<%=address.getId()%></a></li>
 		<%}%>
 		
 	</ul>
