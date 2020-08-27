@@ -1,5 +1,7 @@
 ﻿package com.itwill.filter;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -21,8 +23,8 @@ public class EncodingFilter implements Filter {
 	 */
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.encoding = filterConfig.getInitParameter("encoding");
-		//System.out.println("생성직후 단한번호출 init(): encoding parameter-->"
-		//			+ encoding);
+		System.out.println("생성직후 단한번호출 init(): encoding parameter-->"
+					+ encoding);
 	}
 	
 
@@ -34,14 +36,23 @@ public class EncodingFilter implements Filter {
 		ServletResponse response,
 		FilterChain chain)
 		throws IOException, ServletException {
-		//System.out.println("요청시마다 호출 doFilter()");
-
+		System.out.println("요청시마다 호출 doFilter()");
+		
+		request.setCharacterEncoding("UTF-8");
+		
+		/*
 		if (request.getCharacterEncoding() == null) {
 			if (encoding != null) {
 				request.setCharacterEncoding(encoding);
 			}
 		}
+		*/
 		chain.doFilter(request, response);
+		/*
+		response.setContentType("text/plain;charset=UTF-8");
+		PrintWriter out=response.getWriter();
+		out.print("난 필터!! 넌 누구!!!");
+		*/
 	}
 	public void destroy() {
 		//System.out.println("필터객체가 메모리에서 해지될때호출 destroy()");

@@ -40,8 +40,9 @@
 		location.href='user_list.jsp';
 	}
 
-	function userModify() {
+	function userModifyForm() {
 		document.f.action = "user_modify_form.jsp";
+		document.f.method='POST';
 		document.f.submit();
 	}
 
@@ -118,10 +119,10 @@
 							</form> <br />
 							<table border="0" cellpadding="0" cellspacing="1">
 								<tr>
-									<td align=center><input type="button" value="수정"
-										onClick="userModify()"> &nbsp; <input type="button"
-										value="삭제" onClick="userRemove()"> &nbsp; <input
-										type="button" value="목록" onClick="userList()"></td>
+									<td align=center>
+									 <input type="button" value="수정" onClick="userModifyForm()"> &nbsp; 
+									 <input type="button" value="삭제" onClick="userRemove()"> &nbsp; 
+									 <input type="button" value="목록" onClick="userList()"></td>
 								</tr>
 							</table>
 						</td>

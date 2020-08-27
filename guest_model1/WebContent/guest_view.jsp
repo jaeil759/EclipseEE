@@ -18,7 +18,7 @@
 	GuestService guestService=new GuestService();
 	Guest guest=
 			guestService.selectByNo(Integer.parseInt(guest_noStr));
-	/*
+	
 	if(guest==null){
 		out.println("<script>");
 		out.println("alert('존재하지않는 게시물입니다');");
@@ -26,7 +26,7 @@
 		out.println("</script>");
 		return;
 	}
-	*/
+	
 	
 	
 	
@@ -93,31 +93,31 @@
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">번호</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">25</td>
+								style="padding-left: 10px"><%=guest.getGuest_no()%></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">이름</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">수정</td>
+								style="padding-left: 10px"><%=guest.getGuest_name()%></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">날짜</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">2015-03-18</td>
+								style="padding-left: 10px"><%=guest.getGuest_date().substring(0,10)%></td>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">홈페이지</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">xzcxz</td>
+								style="padding-left: 10px"><%=guest.getGuest_homepage() %></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="22">제목</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">수정 </td>
+								style="padding-left: 10px"><%=guest.getGuest_title() %></td>
 						</tr>
 						<tr>
 							<td width=100 align=center bgcolor="E6ECDE" height="110">내용</td>
 							<td width=490 bgcolor="ffffff" align="left"
-								style="padding-left: 10px">수정ㄴㅁㅇhjkjhhj</td>
+								style="padding-left: 10px"><%=guest.getGuest_content() %></td>
 						</tr>
 					</table>
 				</form> <br />
